@@ -18,11 +18,18 @@
 <div class="container">
     <div class="col-md-8">
         <h1>Nombre y Apellidos</h1>
+        <h4>Edad</h4>
+        <h4>Genero</h4>
+        <p>
         <p>Aqui va el bio</p>
     </div>
     <div class="col-md-4">
-        <div class="container"">
-            <img style="max-height: 250px" src="../osham/images/placeholder.jpeg" class="img-responsive img-circle">
+        <div class="col-md-12">
+            <img style="max-height: 250px" src="../osham/images/placeholder.jpeg" class="img-responsive img-circle center-block">
+        </div>
+        <br>
+        <div class="col-md-12">
+            <button class="btn btn-lg btn-primary center-block">Editar</button>
         </div>
     </div>
 </div>
