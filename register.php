@@ -20,16 +20,16 @@
 <div class="container">
     <div class="col-md-4"></div>
     <div class="col-md-4">
-        <form class="form-signin">
+        <form method="post" class="form-signin" action="controlador_signup.php" enctype="multipart/form-data">
             <h3>Registrate</h3>
             <label for="name">Nombre</label>
             <input name="name" id="inputName" class="form-control">
 
             <label for="email">Correo Electronico</label>
-            <input type="email" id="inputEmail" class="form-control">
+            <input name="email" type="email" id="inputEmail" class="form-control">
 
             <label for="password">Password</label>
-            <input type="password" id="inputPassword" class="form-control">
+            <input name="password" type="password" id="inputPassword" class="form-control">
 
             <label for="age">Edad</label>
             <input type="number" name="age" id="inputAge" class="form-control">
@@ -37,8 +37,11 @@
             <label for="gender">Genero</label>
             <input type="text" name="gender" id="inputGender" class="form-control">
 
-            <label for="password">Password</label>
-            <input type="password" id="inputPassword" class="form-control">
+            <label for="imagenPerfil">Imagen de Perfil</label>
+            <input type="file" name="imagenPerfil">
+
+            <label for="imagenPortada">Imagen de Portada</label>
+            <input type="file" name="imagenPortada">
 
             <label for="bio">Bio</label>
             <textarea name="bio" id="inputBio" class="form-control"></textarea>
