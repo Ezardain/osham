@@ -19,12 +19,12 @@
     <div class="container">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <form class="form-signin">
+            <form class="form-signin" action="ControladorLogin.php" method="post">
                 <h3>Iniciar Sesion</h3>
                 <label for="email">Correo Electronico</label>
-                <input type="email" id="inputEmail" class="form-control">
+                <input type="email" name="inputEmail" id="inputEmail" class="form-control">
                 <label for="password">Password</label>
-                <input type="password" id="inputPassword" class="form-control">
+                <input type="password" name="inputPassword" id="inputPassword" class="form-control">
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
             </form>
         </div>
