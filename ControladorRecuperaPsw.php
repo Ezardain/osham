@@ -14,7 +14,7 @@ if ($mysqli->connect_errno) {
         $mysqli->connect_error;
 }
 //comprobar que mail exista
-$query = "select * from usuario where correo = '" . $email . "'";
+$query = "select * from usuario where correo = '" . $email . "' and confirmado = '1'";
 $existe = false;
 $resultDatos = $mysqli->query($query);
 $existe = $resultDatos->fetch_assoc();
@@ -50,6 +50,9 @@ if ($existe) {
     echo "Se ha enviado una nueva contraseña a tu correo. Intenta ingresar nuevamente. <br>";
     echo "<a href='login.php'> Ir a Login</a>";
 
+} else {
+    echo "Ese correo no existe o no está confirmado. <br>";
+    echo "<a href='login.php'> Ir a Login</a>";
 }
 
 ?>
