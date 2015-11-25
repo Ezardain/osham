@@ -40,7 +40,7 @@ if(trim($name) != "" && trim($email) != "" &&
     $resultDatos = $mysqli->query($query);
     echo "<h1> Tus datos han sido registrados. Bienvenido a Osham.</h1>";
 
-    require("/PHPMailer-master/PHPMailerAutoload.php");
+    require("PHPMailer-master/PHPMailerAutoload.php");
     $mail = new PHPMailer();
     //$mail -> SMTPDebug=1;
     $mail->IsSMTP(); //send via SMTP
