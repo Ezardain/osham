@@ -27,7 +27,7 @@ function login($email, $hashPassword)
 }
 
 if (login($email, $hashPassword)) {
-    header("Location: profile.php?email=".$email);
+    header("Location: profile.php?correo=".$email);
     die();
 } else {
     ?>

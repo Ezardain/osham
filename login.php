@@ -21,10 +21,11 @@
         <div class="col-md-4">
             <form class="form-signin" action="ControladorLogin.php" method="post">
                 <h3>Iniciar Sesion</h3>
-                <label for="email">Correo Electronico</label>
+                <label for="email">Correo Electronico Gmail</label>
                 <input type="email" name="inputEmail" id="inputEmail" class="form-control">
                 <label for="password">Password</label>
                 <input type="password" name="inputPassword" id="inputPassword" class="form-control">
+                <a href="recuperaPsw.php">¿Olvidaste tu contraseña?</a>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
 
             </form>
