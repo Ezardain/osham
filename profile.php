@@ -9,7 +9,7 @@
 include("profile_controller.php");
 
 $correo = $_GET['correo'];
-$usuario = retrieveUserData("prueba@prueba.com");
+$usuario = retrieveUserData($correo);
 
 ?>
 <html lang="en">
@@ -46,11 +46,11 @@ $usuario = retrieveUserData("prueba@prueba.com");
         <div class="col-md-12">
 
             <div class="card hovercard">
-                <div class="cardheader" style="background-image: url("data:image/jpeg;base64,<?php echo base64_encode($usuario["imagenPortada"]); ?>");">
-
+                <!--<div class="cardheader" style="background-image: url("data:image/png;base64,<?php //echo base64_encode($usuario["imagenPortada"]); ?>");">
+-->
                 </div>
                 <div class="avatar">
-                    <img src="data:image/jpeg;base64,<?php echo base64_encode($usuario["imagenPerfil"]); ?>" />
+                   <!-- <img src="data:image/png;base64,<?php// echo base64_encode($usuario["imagenPerfil"]); ?>" />-->
                 </div>
                 <div class="info">
                     <div class="title">
@@ -60,7 +60,7 @@ $usuario = retrieveUserData("prueba@prueba.com");
                     <div class="desc"><?php echo $usuario["bio"]?></div>
                 </div>
                 <div class="bottom">
-                    <a class="btn btn-primary btn-twitter btn-sm" href="editar_perfil.php?correo=<?php $usuario["correo"]?>">
+                    <a class="btn btn-primary btn-twitter btn-sm" href="editarPerfil.php?correo=<?php echo $correo?>">
                         Editar
                     </a>
                 </div>

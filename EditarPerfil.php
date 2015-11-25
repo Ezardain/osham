@@ -9,7 +9,7 @@
 include("profile_controller.php");
 
 $correo = $_GET['correo'];
-$usuario = retrieveUserData("prueba@prueba.com");
+$usuario = retrieveUserData($correo);
 
 ?>
 <html>
@@ -22,11 +22,11 @@ $usuario = retrieveUserData("prueba@prueba.com");
 <div class="container">
     <div class="col-md-4"></div>
     <div class="col-md-4">
-        <form class="form-signin">
+        <form method="post" class="form-signin" action="editar_perfil_controller.php" enctype="multipart/form-data">
             <label for="nombre">Nombre: </label>
             <input type="text" name="nombre" id="nombre" class="form-control" value="<?php echo $usuario["nombre"]?>"/>
             <label for="correo">Correo Electronico: </label>
-            <input type="email" id="correo" name="correo" class="form-control" value="<?php echo $usuario["correo"]?>" disabled />
+            <input type="text" id="correo" name="correo" class="form-control" value="<?php echo $correo?>" readonly/>
             <label for="edad">Edad: </label>
             <input type="number" name="edad" id="edad" min="0" class="form-control" value="<?php echo $usuario["edad"]?>">
 
@@ -40,6 +40,8 @@ $usuario = retrieveUserData("prueba@prueba.com");
             <label for="imagenPortada">Imagen Perfil</label>
             <img src="data:image/jpeg;base64,<?php echo base64_encode($usuario["imagenPortada"]); ?>" class="img-responsive">
             <input type="file" name="imagenPortada" accept="image/*"/>
+
+            <button class="btn btn-lg btn-primary" type="submit">Editar</button>
         </form>
     </div>
 </div>
