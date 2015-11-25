@@ -28,7 +28,7 @@ $usuario = retrieveUserData($correo);
         <div class="col-md-12">
 
             <div class="card hovercard">
-                <div class="cardheader" style="background-image: url(<?php echo 'images/' . $usuario['imagenPortada']?>);">
+                <div class="cardheader" style="background-image: url(<?php echo '../images/' . $usuario['imagenPortada']?>);">
                 </div>
                 <div class="avatar">
                    <img src="<?php echo "../images/" . $usuario["imagenPerfil"]?>" />
