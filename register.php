@@ -48,9 +48,11 @@
             <label for="bio">Bio</label>
             <textarea name="bio" id="inputBio" class="form-control" required></textarea>
             <br>
-            <button class="btn btn-lg">Cancelar</button>
             <button class="btn btn-lg btn-primary pull-right" type="submit">Registrar</button>
         </form>
+
+        <a href="login.php">Regresa a Login.</a>
+
     </div>
 </div>
 </body>

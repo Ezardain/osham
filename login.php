@@ -27,8 +27,10 @@
                 <input type="password" name="inputPassword" id="inputPassword" class="form-control">
                 <a href="recuperaPsw.php">¿Olvidaste tu contraseña?</a>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
-
             </form>
+
+            <a href="register.php">¿No tienes cuenta? Regístrate hoy.</a>
+
         </div>
     </div>
 </body>
