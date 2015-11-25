@@ -5,7 +5,7 @@
  * Date: 24/11/15
  * Time: 5:50 PM
  */
-
+$nombreDirectorio = "images/";
 
 $name=$_POST["nombre"];
 $email=$_POST["correo"];
@@ -20,16 +20,21 @@ try {
     $DBH->exec($query);
 
     if (file_exists($_FILES['imagenPerfil']['tmp_name'])) {
-        $imagenPerfil = addslashes(file_get_contents($_FILES['imagenPerfil']['tmp_name']));
-        $queryProfilePic = "UPDATE usuario SET imagenPerfil='{$imagenPerfil}' WHERE correo='$correo'";
+        $nombreArchivoPerfil = $_FILES['imagenPerfil']['name'];
+        $nombreArchivoPerfil = preg_replace("/[\s_]/", "-", $nombreArchivoPerfil);
+        $nombreArchivoPerfil = time() . "-" . $nombreArchivoPerfil;
+        move_uploaded_file ($_FILES['imagenPerfil']['tmp_name'], $nombreDirectorio . $nombreArchivoPerfil);
+        $queryProfilePic = "UPDATE usuario SET imagenPerfil='{$nombreArchivoPerfil}' WHERE correo='$email'";
         echo $queryProfilePic;
         $DBH->exec($queryProfilePic);
     }
 
     if (file_exists($_FILES['imagenPortada']['tmp_name'])) {
-        $imagenPortada = addslashes(file_get_contents($_FILES['imagenPortada']['tmp_name']));
-        $queryPortada = "UPDATE usuario SET imagenPortada='{$imagenPortada}' WHERE correo='$correo'";
-        echo $queryPortada;
+        $nombreArchivoPortada = $_FILES['imagenPortada']['name'];
+        $nombreArchivoPortada = preg_replace("/[\s_]/", "-", $nombreArchivoPortada);
+        $nombreArchivoPortada = time() . "-" . $nombreArchivoPortada;
+        move_uploaded_file ($_FILES['imagenPortada']['tmp_name'], $nombreDirectorio . $nombreArchivoPortada);
+        $queryPortada = "UPDATE usuario SET imagenPortada='{$nombreArchivoPortada}' WHERE correo='$email'";
         $DBH->exec($queryPortada);
     }
 
@@ -40,4 +45,4 @@ $DBH = null;
 
 
 
-//header("Location: profile.php?correo=" . $email);
+header("Location: profile.php?correo=" . $email);

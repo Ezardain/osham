@@ -34,11 +34,11 @@ $usuario = retrieveUserData($correo);
             <textarea name="biografia" id="biografia" class="form-control"><?php echo $usuario["bio"]?></textarea>
 
             <label for="imagenPerfil">Imagen Perfil</label>
-            <img src="data:image/jpeg;base64,<?php echo base64_encode($usuario["imagenPerfil"]); ?>" class="img-responsive">
+            <img src="<?php echo "images/" . $usuario["imagenPerfil"] ?>" class="img-responsive">
             <input type="file" name="imagenPerfil" accept="image/*"/>
 
-            <label for="imagenPortada">Imagen Perfil</label>
-            <img src="data:image/jpeg;base64,<?php echo base64_encode($usuario["imagenPortada"]); ?>" class="img-responsive">
+            <label for="imagenPortada">Imagen Portada</label>
+            <img src="<?php echo "images/" . $usuario["imagenPortada"]?>" class="img-responsive">
             <input type="file" name="imagenPortada" accept="image/*"/>
 
             <button class="btn btn-lg btn-primary" type="submit">Editar</button>

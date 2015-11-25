@@ -5,6 +5,8 @@
  * Date: 24/11/2015
  * Time: 01:01 PM
  */
+$nombreDirectorio = "images/";
+
 $name=$_POST["name"];
 $email=$_POST["email"];
 $password=md5($_POST["password"]);
@@ -16,10 +18,20 @@ $bio=$_POST["bio"];
 
 if($imagenPerfil === FALSE) {
     $imagenPerfil = null;
+} else {
+    $nombreArchivoPerfil = $_FILES['imagenPerfil']['name'];
+    $nombreArchivoPerfil = preg_replace("/[\s_]/", "-", $nombreArchivoPerfil);
+    $nombreArchivoPerfil = time() . "-" . $nombreArchivoPerfil;
+    move_uploaded_file ($_FILES['imagenPerfil']['tmp_name'], $nombreDirectorio . $nombreArchivoPerfil);
 }
 
 if($imagenPortada === FALSE) {
     $imagenPortada = null;
+} else {
+    $nombreArchivoPortada = $_FILES['imagenPortada']['name'];
+    $nombreArchivoPortada = preg_replace("/[\s_]/", "-", $nombreArchivoPortada);
+    $nombreArchivoPortada = time() . "-" . $nombreArchivoPortada;
+    move_uploaded_file ($_FILES['imagenPortada']['tmp_name'], $nombreDirectorio . $nombreArchivoPortada);
 }
 
 if(trim($name) != "" && trim($email) != "" &&
@@ -34,7 +46,7 @@ if(trim($name) != "" && trim($email) != "" &&
     }
 
     $query = "INSERT INTO usuario (nombre,correo,edad,genero,hashPassword,imagenPerfil,imagenPortada,bio, confirmado, codigoConfirmacion) VALUES ('"
-        . $name . "', '" .$email ."', '" .$age . "', '" .$gender . "', '" .$password . "', '{$imagenPerfil}', '{$imagenPortada}', '" . $bio . "', '0'
+        . $name . "', '" .$email ."', '" .$age . "', '" .$gender . "', '" .$password . "', '{$nombreArchivoPerfil}', '{$nombreArchivoPortada}', '" . $bio . "', '0'
         , '" . $email . rand(). "')";
 
     $resultDatos = $mysqli->query($query);
