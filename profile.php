@@ -44,11 +44,16 @@ $usuario = retrieveUserData($correo);
                     <a class="btn btn-primary btn-twitter btn-sm" href="editarPerfil.php?correo=<?php echo $correo?>">
                         Editar
                     </a>
+                    <a class="btn btn-primary btn-twitter btn-sm" href="login.php">
+                        Cerrar sesion
+                    </a>
                     <?php
                     if ($usuario["confirmado"] == '0'){
-                        echo "<a href='confirmaCorreo.php?correo=$correo' class='btn btn-primary btn-twitter btn-sm'> Confirma tu correo </a>";
-                        echo "<form action='confirmaCorreo.php'>";
-                        
+                        echo "<br> <br>";
+                        echo "<form action='ControladorConfirmaCorreo.php'>";
+                        echo "Codigo de confirmacion de correo <input type='text' name='codigoConfirma'> ";
+                        echo "<input type='hidden' name='correo' value='$correo'>";
+                        echo "<input type='submit' value='confirmar'>";
                         echo "</form>";
                     }
                     ?>
