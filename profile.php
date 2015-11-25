@@ -23,34 +23,15 @@ $usuario = retrieveUserData($correo);
 </head>
 <body>
 
-<!--<div class="container">
-    <div class="col-md-8">
-        <h1><?php echo $usuario["nombre"]?></h1>
-        <h4><?php echo $usuario["edad"]?></h4>
-        <h4><?php echo $usuario["genero"]?></h4>
-        <p><?php echo $usuario["bio"]?></p>
-    </div>
-    <div class="col-md-4">
-        <div class="col-md-12">
-            <img style="max-height: 250px" src="../osham/images/placeholder.jpeg" class="img-responsive img-circle center-block">
-        </div>
-        <br>
-        <div class="col-md-12">
-            <button class="btn btn-lg btn-primary center-block">Editar</button>
-        </div>
-    </div>
-</div>-->
-
 <div class="container">
     <div class="row">
         <div class="col-md-12">
 
             <div class="card hovercard">
-                <!--<div class="cardheader" style="background-image: url("data:image/png;base64,<?php //echo base64_encode($usuario["imagenPortada"]); ?>");">
--->
+                <div class="cardheader" style="background-image: url(<?php echo 'images/' . $usuario['imagenPortada']?>);">
                 </div>
                 <div class="avatar">
-                   <!-- <img src="data:image/png;base64,<?php// echo base64_encode($usuario["imagenPerfil"]); ?>" />-->
+                   <img src="<?php echo "images/" . $usuario["imagenPerfil"]?>" />
                 </div>
                 <div class="info">
                     <div class="title">
