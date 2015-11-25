@@ -24,7 +24,7 @@ if ($existe) {
     $query = "update usuario set hashPassword = '" . md5($nuevapsw). "' where correo = '" . $email ."'";
     $result = $mysqli->query($query);
 
-    require("PHPMailer-master/PHPMailerAutoload.php");
+    require("../PHPMailer-master/PHPMailerAutoload.php");
     $mail = new PHPMailer();
     //$mail -> SMTPDebug=1;
     $mail->IsSMTP(); //send via SMTP
@@ -48,11 +48,11 @@ if ($existe) {
         exit;
     }
     echo "Se ha enviado una nueva contraseña a tu correo. Intenta ingresar nuevamente. <br>";
-    echo "<a href='login.php'> Ir a Login</a>";
+    echo "<a href='../View/login.php'> Ir a Login</a>";
 
 } else {
     echo "Ese correo no existe o no está confirmado. <br>";
-    echo "<a href='login.php'> Ir a Login</a>";
+    echo "<a href='../View/login.php'> Ir a Login</a>";
 }
 
 ?>

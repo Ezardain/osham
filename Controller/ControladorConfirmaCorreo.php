@@ -15,6 +15,6 @@ if ($mysqli->connect_errno) {
 }
 $query = "Update usuario set confirmado = '1' where codigoConfirmacion = '$codigo'";
 $resultDatos = $mysqli->query($query);
-header("Location: profile.php?correo=$correo");
+header("Location: ../View/profile.php?correo=$correo");
 die();
 ?>

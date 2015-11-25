@@ -27,7 +27,7 @@ function login($email, $hashPassword)
 }
 
 if (login($email, $hashPassword)) {
-    header("Location: profile.php?correo=".$email);
+    header("Location: ../View/profile.php?correo=".$email);
     die();
 } else {
     ?>
@@ -39,7 +39,7 @@ if (login($email, $hashPassword)) {
     </head>
     <body>
     <p>Login incorrecto.</p>
-    <p><a href="login.php">Regresar</a></p>
+    <p><a href="../View/login.php">Regresar</a></p>
     </body>
     </html>
     <?php

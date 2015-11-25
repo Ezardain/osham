@@ -6,7 +6,7 @@
  * Time: 11:51 AM
  */
 
-include("profile_controller.php");
+include("../Controller/ControladorProfile.php");
 
 $correo = $_GET['correo'];
 $usuario = retrieveUserData($correo);
@@ -15,8 +15,8 @@ $usuario = retrieveUserData($correo);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="../osham/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../osham/css/profile.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/profile.css" rel="stylesheet">
 
     <title>Perfil</title>
 
@@ -31,7 +31,7 @@ $usuario = retrieveUserData($correo);
                 <div class="cardheader" style="background-image: url(<?php echo 'images/' . $usuario['imagenPortada']?>);">
                 </div>
                 <div class="avatar">
-                   <img src="<?php echo "images/" . $usuario["imagenPerfil"]?>" />
+                   <img src="<?php echo "../images/" . $usuario["imagenPerfil"]?>" />
                 </div>
                 <div class="info">
                     <div class="title">
@@ -50,7 +50,7 @@ $usuario = retrieveUserData($correo);
                     <?php
                     if ($usuario["confirmado"] == '0'){
                         echo "<br> <br>";
-                        echo "<form action='ControladorConfirmaCorreo.php'>";
+                        echo "<form action='../Controller/ControladorConfirmaCorreo.php'>";
                         echo "Codigo de confirmacion de correo <input type='text' name='codigoConfirma'> ";
                         echo "<input type='hidden' name='correo' value='$correo'>";
                         echo "<input type='submit' value='confirmar'>";

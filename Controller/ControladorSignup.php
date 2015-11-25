@@ -5,7 +5,7 @@
  * Date: 24/11/2015
  * Time: 01:01 PM
  */
-$nombreDirectorio = "images/";
+$nombreDirectorio = "../images/";
 
 $name=$_POST["name"];
 $email=$_POST["email"];
@@ -45,14 +45,15 @@ if(trim($name) != "" && trim($email) != "" &&
             $mysqli->connect_error;
     }
 
+    $codigoConfirmacion = $email . rand();
     $query = "INSERT INTO usuario (nombre,correo,edad,genero,hashPassword,imagenPerfil,imagenPortada,bio, confirmado, codigoConfirmacion) VALUES ('"
         . $name . "', '" .$email ."', '" .$age . "', '" .$gender . "', '" .$password . "', '{$nombreArchivoPerfil}', '{$nombreArchivoPortada}', '" . $bio . "', '0'
-        , '" . $email . rand(). "')";
+        , '" . $codigoConfirmacion. "')";
 
     $resultDatos = $mysqli->query($query);
     echo "<h1> Tus datos han sido registrados. Bienvenido a Osham.</h1>";
 
-    require("PHPMailer-master/PHPMailerAutoload.php");
+    require("../PHPMailer-master/PHPMailerAutoload.php");
     $mail = new PHPMailer();
     //$mail -> SMTPDebug=1;
     $mail->IsSMTP(); //send via SMTP
@@ -69,7 +70,7 @@ if(trim($name) != "" && trim($email) != "" &&
     $mail->WordWrap = 50; //set word wrap
     $mail->IsHTML(true); //send asHTML
     $mail->Subject = "Bienvenido a Osham";
-    $mail->Body = "<p> Este es tu codigo de confirmacion de correo electrónico:" . $email . rand() . "</p>
+    $mail->Body = "<p> Este es tu codigo de confirmacion de correo electrónico:" . $codigoConfirmacion . "</p>
         <p> Por favor, ingresa este código en tu perfil para completar tu registro.  </p>
         <p> Atentamente,</p> <p> Equipo Osham</p> ";
     if(!$mail->Send()){
@@ -78,7 +79,7 @@ if(trim($name) != "" && trim($email) != "" &&
         exit;
     }
     echo "Se ha enviado un mensaje de confirmacion de correo electronico a tu cuenta. <br>";
-    echo "<a href='login.php'> Ir a Login</a>";
+    echo "<a href='../View/login.php'> Ir a Login</a>";
 }
 
 

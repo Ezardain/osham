@@ -5,7 +5,7 @@
  * Date: 24/11/15
  * Time: 5:50 PM
  */
-$nombreDirectorio = "images/";
+$nombreDirectorio = "../images/";
 
 $name=$_POST["nombre"];
 $email=$_POST["correo"];
@@ -45,4 +45,4 @@ $DBH = null;
 
 
 
-header("Location: profile.php?correo=" . $email);
+header("Location: ../View/profile.php?correo=" . $email);

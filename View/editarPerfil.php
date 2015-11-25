@@ -6,7 +6,7 @@
  * Time: 04:38 PM
  */
 
-include("profile_controller.php");
+include("../Controller/ControladorProfile.php");
 
 $correo = $_GET['correo'];
 $usuario = retrieveUserData($correo);
@@ -15,14 +15,14 @@ $usuario = retrieveUserData($correo);
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="../osham/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <title>Editar Perfil</title>
 </head>
 <body>
 <div class="container">
     <div class="col-md-4"></div>
     <div class="col-md-4">
-        <form method="post" class="form-signin" action="editar_perfil_controller.php" enctype="multipart/form-data">
+        <form method="post" class="form-signin" action="../Controller/ControladorEditarPerfil.php" enctype="multipart/form-data">
             <label for="nombre">Nombre: </label>
             <input type="text" name="nombre" id="nombre" class="form-control" value="<?php echo $usuario["nombre"]?>"/>
             <label for="correo">Correo Electronico: </label>

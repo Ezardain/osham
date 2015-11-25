@@ -11,7 +11,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <link href="../osham/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <title>Registro</title>
 
@@ -20,7 +20,7 @@
 <div class="container">
     <div class="col-md-4"></div>
     <div class="col-md-4">
-        <form method="post" class="form-signin" action="controlador_signup.php" enctype="multipart/form-data">
+        <form method="post" class="form-signin" action="../Controller/ControladorSignup.php" enctype="multipart/form-data">
             <h3>Registrate</h3>
             <label for="name">Nombre</label>
             <input name="name" id="inputName" class="form-control" required>

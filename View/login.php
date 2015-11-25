@@ -10,7 +10,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="../osham/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
     <title>Login</title>
 
@@ -19,7 +19,7 @@
     <div class="container">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <form class="form-signin" action="ControladorLogin.php" method="post">
+            <form class="form-signin" action="../Controller/ControladorLogin.php" method="post">
                 <h3>Iniciar Sesion</h3>
                 <label for="email">Correo Electronico Gmail</label>
                 <input type="email" name="inputEmail" id="inputEmail" class="form-control">

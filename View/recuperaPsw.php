@@ -11,7 +11,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <link href="../osham/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
 
         <title>Login</title>
     </head>
@@ -19,7 +19,7 @@
         <div class="container">
             <div class="col-md-4"></div>
                 <div class="col-md-4">
-                    <form class="recuperaPsw" action="ControladorRecuperaPsw.php" method="post">
+                    <form class="recuperaPsw" action="../Controller/ControladorRecuperaPsw.php" method="post">
                         <h3>Recupera tu contraseña.</h3>
                         <label for="email">Correo Electronico Gmail</label>
                         <input type="email" name="email" id="inputEmail">
